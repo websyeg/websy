@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <title>Websy</title>
+</head>
+<body>
+    <!--Header-->
+  <div class="header">
+    <img class="logo" src="WEBSY main LOGO.png" />
+    <div class="header-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="https://wa.link/bsyw1p">Contact</a>
+      <a href="About.html">About</a>
+    </div>
+    <div class="header-links-sign">
+      <a href="signin.html"><button id="sign-btn">Sign in</button></a>
+    </div>
+  </div>
+
+  <!--Landing Page-->
+  <div class="landing-page" style="color: white;">
+    <div class="landing-page-left-section">
+        <span>Welcome To Websy!</span>
+        <h1>Best & Most Affordable Websites Ever</h1>
+        <p>
+            I create professional Shopify websites tailored for clothing brands. You’ll need an internationally supported Visa or credit card to handle payments, and Shopify fees are covered by you. I’ll fully set up your store with your products, sizes, prices, sales, and shipping details. Scroll down for more information.
+        </p>
+        <div class="landing-page-search">
+            <input id="search-input" placeholder="Start searching..." />
+            <button class="btn" id="search-btn">Search</button>
+        </div>
+    </div>
+    <div class="landing-page-image-container">
+        <img class="wbbg" src="WB BG.png" />
+    </div>
+  </div>
+
+  <!--Main Section-->
+  <div class="main-container">
+    <span class="mainspan">Main</span>
+    <div class="main-section">
+<h1>Main Section</h1>
+<a href="viewall.html">
+<button class="main-section-button">VIEW ALL</button>
+</a>
+
+
+    </div>
+    <div class="main-cards">
+  <div class="card">
+    <a href="orderinstructions.html">
+      <img class="card-photo-image" src="Card Photo LIGHT GRAY.png"/>
+    </a>
+    <div class="card-info">
+      <div class="card-name">
+        <p>Services</p>
+        <h3>Shopify Website</h3>
+      </div>
+      <a href="orderinstructions.html">
+        <img class="shopping-icon" src="Shopping Icon.PNG" />
+      </a>
+    </div>
+  </div>
+</div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const signDiv = document.querySelector('.header-links-sign');
+      const signBtn = document.getElementById('sign-btn');
+      if (localStorage.getItem('websySignedIn') === 'true') {
+        // Replace Sign in with Account button
+        signDiv.innerHTML = `
+          <div style="position: relative;">
+            <button id="account-btn" style="background: #000; color: #fff; border: none; padding: 0.5rem 1rem; cursor: pointer; border-radius: 4px;">Account</button>
+            <div id="account-menu" style="display:none; position:absolute; right:0; top:110%; background:#fff; border:1px solid #000; border-radius:6px; min-width:150px; z-index:10;">
+              <button id="change-pass-btn" style="background:#fff; color:#000; border:none; width:100%; text-align:left; padding:0.75rem 1rem; cursor:pointer;">Change Password</button>
+              <button id="signout-btn" style="background:#fff; color:#000; border:none; width:100%; text-align:left; padding:0.75rem 1rem; cursor:pointer;">Sign Out</button>
+            </div>
+          </div>
+        `;
+        // Toggle menu
+        signDiv.querySelector('#account-btn').onclick = function() {
+          const menu = document.getElementById('account-menu');
+          menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        };
+        // Sign out
+        signDiv.querySelector('#signout-btn').onclick = function() {
+          localStorage.setItem('websySignedIn', 'false');
+          window.location.reload();
+        };
+        // Change password
+        signDiv.querySelector('#change-pass-btn').onclick = function() {
+          const newPass = prompt('Enter new password:');
+          if (newPass) {
+            localStorage.setItem('websyPass', newPass);
+            alert('Password changed!');
+          }
+        };
+        // Hide menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!signDiv.contains(e.target)) {
+            document.getElementById('account-menu').style.display = 'none';
+          }
+        });
+      }
+    });
+
+    // Search functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchBtn = document.getElementById('search-btn');
+      const searchInput = document.getElementById('search-input');
+      if (searchBtn && searchInput) {
+        searchBtn.onclick = function() {
+          const value = searchInput.value.trim().toLowerCase();
+          const keywords = [
+            "shopify", "website", "websit", "web", "shop", "service", "services"
+          ];
+          const found = keywords.some(word => value.includes(word));
+          if (found) {
+            window.location.href = "searchresults.html";
+          } else {
+            alert("Nothing found");
+          }
+        };
+      }
+    });
+  </script>
+</body>

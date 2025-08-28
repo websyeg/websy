@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify Website Order Instructions</title>
+  <style>
+    body {
+      background: #fff;
+      color: #000;
+      font-family: Roboto, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 2rem 2.5rem;
+      border: 1px solid #000;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    ol, ul {
+      margin-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .proceed-btn {
+      display: block;
+      width: 100%;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.9rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .proceed-btn:hover {
+      background: #222;
+    }
+    @media (max-width: 700px) {
+      .container { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Back arrow in top left corner -->
+    <a href="index.html" style="position: absolute; left: 24px; top: 24px; text-decoration: none; font-size: 2rem; color: #000;">
+      &#8592;
+    </a>
+    <h1 id="main-title">Shopify Website Order Instructions</h1>
+    <button class="proceed-btn" id="arabic-btn" style="margin-bottom:1.5rem;" onclick="showArabic()">اقرأ بالعربي</button>
+    <button class="proceed-btn" id="english-btn" style="margin-bottom:1.5rem; display:none;" onclick="showEnglish()">Read in English</button>
+    
+    <div id="english-instructions">
+      <h2>1. Payment Requirements</h2>
+      <ol>
+        <li>You must have an internationally supported Visa or credit card to pay online.</li>
+        <li>Debit cards and prepaid cards issued in Egypt cannot be used, as online transactions on them are currently suspended.</li>
+      </ol>
+      <h2>2. Shopify Fees</h2>
+      <ol>
+        <li>All Shopify subscription fees are your responsibility, not included in my service.</li>
+        <li>Current offer (limited time): Shopify provides the first 3 months at $1 per month, then $32 per month afterwards.</li>
+        <li>If you miss the offer: You will still get the first month for $1, followed by $32 per month.</li>
+      </ol>
+      <h2>3. Saving on Fees (Optional Workaround)</h2>
+      <ol>
+        <li>To avoid paying the $32 monthly fee, you can create a new Shopify website each month and only pay $1.</li>
+        <li>However, you must shut down the site before the $1 trial ends, or Shopify will automatically charge you $32.</li>
+      </ol>
+      <p style="font-size: 0.98rem; margin-bottom: 1.5rem;">
+        <strong>Note:</strong> If you choose this method, you will need to order a new website setup from me every month, as each site will be created from scratch.
+      </p>
+      <h2>4. What You Need to Provide Me</h2>
+      <ol>
+        <li>A full list of all products you want to sell.</li>
+        <li>Sizes and prices for each product.</li>
+        <li>Information on whether items are on sale or not.</li>
+        <li>Your shipping details (locations, fees, and methods).</li>
+      </ol>
+      <h2>5. Payment Methods (to Me)</h2>
+      <ol>
+        <li>You can pay me securely through Instapay.</li>
+        <li>You can also pay me through Telda.</li>
+        <li>You can also pay me through Klivvr.</li>
+      </ol>
+      <h2>6. My Service</h2>
+      <ol>
+        <li>I will fully set up your Shopify store according to the information you provide.</li>
+        <li>Orders are completed within 24–48 hours.</li>
+      </ol>
+      <h2>7. My Service Fee</h2>
+      <ol>
+        <li>For a limited time, I am offering my full Shopify website setup service for only <strong>399 EGP</strong> — instead of the regular price of 599 EGP.</li>
+        <li>This means you save 200 EGP right away.</li>
+        <li>Grab this offer while it lasts and get your professional store at a special discounted rate.</li>
+      </ol>
+      <p style="margin-top:1.5rem;">
+        My goal is to make the process as smooth and professional as possible, while you remain responsible for Shopify’s subscription fees.
+      </p>
+      <button class="proceed-btn" onclick="window.open('https://wa.me/01022996010?text=Hello%2C%20I%20want%20to%20order%20a%20Shopify%20website%20as%20per%20your%20instructions.','_blank')">
+        Proceed to Order on WhatsApp
+      </button>
+      <p style="color: #666; background: #f3f3f3; border-radius: 6px; padding: 0.8rem 1rem; font-size: 0.97rem; margin-top: 1.2rem; text-align: center;">
+        <strong>Note:</strong> Please make sure you have carefully read all the instructions above before messaging to order.<br>
+        When you are ready, simply send: <span style="font-style:italic; color:#222;">"I would like to place an order"</span>
+      </p>
+    </div>
+    <div id="arabic-instructions" style="display:none; direction:rtl; text-align:right;">
+      <h2>١. متطلبات الدفع</h2>
+      <ol>
+        <li>لازم يكون معاك فيزا أو كريدت كارد دولي شغّال أونلاين.</li>
+        <li>الكروت الديبت أو البري-پيد (المسبقة الدفع) اللي طالعة من مصر مش هتنفع عشان الحكومة موقفه التعاملات الأونلاين بيها.</li>
+      </ol>
+      <h2>٢. مصاريف Shopify</h2>
+      <ol>
+        <li>كل مصاريف الاشتراك في Shopify تبقى على حضرتك، مش ضمن خدمتي.</li>
+        <li>العرض الحالي (لفترة محدودة): أول 3 شهور بـ 1 دولار في الشهر، وبعد كده الاشتراك يبقى 32 دولار في الشهر.</li>
+        <li>لو العرض فاتك: هتدفع أول شهر برضه 1 دولار، وبعد كده 32 دولار كل شهر.</li>
+      </ol>
+      <h2>٣. التوفير في المصاريف (اختياري)</h2>
+      <ol>
+        <li>ممكن تعمل موقع جديد كل شهر وتدفع 1 دولار بس، عشان تتفادى إنك تدفع 32 دولار.</li>
+        <li>بس لازم تقفل الموقع قبل ما الشهر يخلص، وإلا Shopify هتسحب منك 32 دولار أوتوماتيك.</li>
+      </ol>
+      <p style="font-size: 0.98rem; margin-bottom: 1.5rem;">
+        <strong>خد بالك:</strong> لو اخترت الطريقة دي، هتحتاج تطلب مني موقع جديد كل شهر، وكل مرة هيكون بمقابل.
+      </p>
+      <h2>٤. الحاجات اللي لازم تبعتهالي</h2>
+      <ol>
+        <li>قايمة كاملة بكل المنتجات اللي عايز تبيعها.</li>
+        <li>المقاسات والأسعار لكل منتج.</li>
+        <li>لو المنتج عليه خصم أو سيل ولا لأ.</li>
+        <li>تفاصيل الشحن (المناطق، الأسعار، وطريقة التوصيل).</li>
+      </ol>
+      <h2>٥. طرق الدفع ليا أنا</h2>
+      <ol>
+        <li>تقدر تبعتلي الفلوس عن طريق Instapay.</li>
+        <li>أو تدفعلي عن طريق Telda.</li>
+        <li>أو تدفعلي عن طريق Klivvr.</li>
+      </ol>
+      <h2>٦. خدمتي</h2>
+      <ol>
+        <li>أنا هظبطلك موقع Shopify كامل بالمعلومات اللي هتبعتها.</li>
+        <li>الأوردر بيتسلم خلال 24–48 ساعة.</li>
+      </ol>
+      <h2>٧. سعر خدمتي</h2>
+      <ol>
+        <li>دلوقتي عندك عرض خاص ولفترة محدودة: أعملك موقع Shopify كامل بـ <strong>399 جنيه</strong> بس بدل 599 جنيه.</li>
+        <li>يعني بتكسب 200 جنيه توفير من أول مرة.</li>
+        <li>اغتنم الفرصة وخد موقع احترافي بالسعر المخفّض قبل ما العرض يخلص.</li>
+      </ol>
+      <p style="margin-top:1.5rem;">
+        هدفي أسهّل عليك العملية كلها وأخليها احترافية، وانت المسؤول عن مصاريف الاشتراك بتاعة Shopify.
+      </p>
+      <button class="proceed-btn" onclick="window.open('https://wa.me/01022996010?text=مرحبا%2C%20اريد%20طلب%20موقع%20Shopify%20حسب%20التعليمات%20بالعربي.','_blank')">
+        اطلب على واتساب
+      </button>
+      <p style="color: #666; background: #f3f3f3; border-radius: 6px; padding: 0.8rem 1rem; font-size: 0.97rem; margin-top: 1.2rem; text-align: center;">
+        <strong>ملحوظة:</strong> اتأكد إنك قريت كل التعليمات اللي فوق كويس قبل ما تبعتلي عشان تطلب.<br>
+        أول ما تخلص قراءة، ابعتلي: <span style="font-style:italic; color:#222;">"عايز أعمل أوردر"</span>
+      </p>
+    </div>
+  </div>
+  <script>
+    function showArabic() {
+      document.getElementById('english-instructions').style.display = 'none';
+      document.getElementById('arabic-instructions').style.display = 'block';
+      document.getElementById('arabic-btn').style.display = 'none';
+      document.getElementById('english-btn').style.display = 'block';
+      document.getElementById('main-title').textContent = 'تعليمات طلب موقع Shopify';
+    }
+    function showEnglish() {
+      document.getElementById('english-instructions').style.display = 'block';
+      document.getElementById('arabic-instructions').style.display = 'none';
+      document.getElementById('arabic-btn').style.display = 'block';
+      document.getElementById('english-btn').style.display = 'none';
+      document.getElementById('main-title').textContent = 'Shopify Website Order Instructions';
+    }
+  </script>
+</body>
+</html>

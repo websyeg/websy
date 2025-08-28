@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Websy</title>
+  <style>
+    body { background: #fff; color: #000; font-family: Roboto, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .container { border: 1px solid #000; padding: 2rem; border-radius: 8px; width: 300px; }
+    input, button { width: 100%; margin: 0.5rem 0; padding: 0.5rem; }
+    button { background: #000; color: #fff; border: none; cursor: pointer; }
+    a { color: #000; text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Register</h2>
+    <input id="reg-username" placeholder="Username" required />
+    <input id="reg-password" type="password" placeholder="Password" required />
+    <button onclick="register()">Register</button>
+    <p>Already have an account? <a href="signin.html">Sign in</a></p>
+  </div>
+  <script>
+    function register() {
+      const user = document.getElementById('reg-username').value;
+      const pass = document.getElementById('reg-password').value;
+      if (user && pass) {
+        localStorage.setItem('websyUser', user);
+        localStorage.setItem('websyPass', pass);
+        alert('Registered! Please sign in.');
+        window.location.href = 'signin.html';
+      } else {
+        alert('Please fill all fields.');
+      }
+    }
+  </script>
+</body>
+</html>
